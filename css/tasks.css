@@ -1,4 +1,31 @@
+.tasks {
+    list-style-type: none;
+    padding: 0;
+}
+
 .tasks__task{
+    
+}
+
+.tasks__task--done {
     text-decoration: line-through;
 }
 
+.tasks__button {
+    
+}
+
+.tasks__button:hover {
+    background-color: rgb(85, 0, 0);
+}
+
+.tasks__button--remove {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.tasks__button--remove:hover {
+    background-color: rgb(85, 0, 0);
+    transition: 0.3s;
+}
