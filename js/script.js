@@ -24,6 +24,29 @@
         render();
     }
 
+    const toggleTaskDone = (index) => {
+        tasks[index].done = !tasks[index].done;
+        render();
+    }
+
+    const bindEvents = () => {
+        const removeButtons = document.querySelectorAll(".js-remove");
+
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
+            });
+        });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
+        });
+    }
+
     const render = () => {
         let htmlString = "";
 
@@ -32,9 +55,12 @@
             <li class=
                 ${task.done ? "\"tasks__task--done\"" : "\"tasks__task\""}
                 >
+                <button class="js-done"> zrobione? </button>
                 
                 ${task.content}
-
+                
+                
+                
                 <button class="js-remove"> usuń </button>
             </li>
 
@@ -42,13 +68,7 @@
             `;
             document.querySelector(".js-tasks").innerHTML = htmlString;
 
-            const removeButtons = document.querySelectorAll(".js-remove");
-            
-            removeButtons.forEach((removeButton, index) =>{
-                removeButton.addEventListener("click", () => {
-                    removeTask(index);
-                });
-            });
+            bindEvents();
         };
     };
 
@@ -64,7 +84,7 @@
         addNewTask(newTaskContent);
     }
 
-    
+
 
     const init = () => {
 
@@ -77,6 +97,6 @@
 
     init();
 }
-        
-        
-        
+
+
+
