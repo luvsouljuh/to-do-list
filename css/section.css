@@ -1,13 +1,28 @@
 .section {
-    display: flex;
     width: 100%;
-    flex-wrap: wrap;
+    background-color: white;
+    margin-bottom: 20px;
+    border: 2px solid black;
 }
 
 .section__header {
     width: 100%;
+    padding: 20px;
+    height: 50%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+
+.section__title {
+    margin: 0;
 }
 
 .section__content {
     width: 100%;
+    padding: 20px;
+    height: 50%;
+    display: flex;
+    align-items: center;
 }

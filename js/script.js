@@ -1,14 +1,5 @@
 {
-    const tasks = [
-        {
-            content: "wykonać pracę",
-            done: false,
-        },
-        {
-            content: "ostylować strone",
-            done: true,
-        },
-    ];
+    const tasks = [];
 
     const addNewTask = (newTaskContent) => {
         tasks.push({
@@ -20,6 +11,9 @@
     }
 
     const removeTask = (index) => {
+        if (tasks.length === 1) {
+            tasks = [];
+        }
         tasks.splice(index, 1);
         render();
     }
@@ -45,6 +39,7 @@
                 toggleTaskDone(index);
             });
         });
+        
     }
 
     const render = () => {
