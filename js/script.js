@@ -1,28 +1,6 @@
 {
     const tasks = [];
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-            done: false,
-        })
-
-        render();
-    }
-
-    const removeTask = (index) => {
-        if (tasks.length === 1) {
-            tasks = [];
-        }
-        tasks.splice(index, 1);
-        render();
-    }
-
-    const toggleTaskDone = (index) => {
-        tasks[index].done = !tasks[index].done;
-        render();
-    }
-
     const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
@@ -39,8 +17,28 @@
                 toggleTaskDone(index);
             });
         });
-        
+
     }
+
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+            done: false,
+        })
+
+        render();
+    }
+
+    const removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    }
+
+    const toggleTaskDone = (index) => {
+        tasks[index].done = !tasks[index].done;
+        render();
+    }
+
 
     const render = () => {
         let htmlString = "";
@@ -54,18 +52,18 @@
                 
                 ${task.content}
                 
-                
-                
                 <button class="js-remove"> usuń </button>
             </li>
-
-            
             `;
-            document.querySelector(".js-tasks").innerHTML = htmlString;
+            
+        };
 
+        document.querySelector(".js-tasks").innerHTML = htmlString;
             bindEvents();
         };
-    };
+
+
+            
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -91,7 +89,4 @@
     };
 
     init();
-}
-
-
-
+}       
