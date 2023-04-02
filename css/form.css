@@ -1,1 +1,33 @@
-.form{}
+.form{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+}
+
+@media (max-width: 770px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form__newTaskInput {
+    padding: 10px;
+    border: 2px solid rgb(221, 221, 221);
+}
+
+.form__addTaskButton {
+    padding: 10px;
+    border: 0;
+    background-color: hsl(180, 100%, 25%);
+    color: white;
+}
+
+.form__addTaskButton:hover {
+    background-color: hsl(180, 100%, 30%);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.form__addTaskButton:active {
+    background-color: hsl(180, 100%, 35%);
+}
