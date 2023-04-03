@@ -17,7 +17,6 @@
                 toggleTaskDone(index);
             });
         });
-
     }
 
     const addNewTask = (newTaskContent) => {
@@ -39,32 +38,25 @@
         render();
     }
 
-
     const render = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-            <li class=
-                ${task.done ? "\"tasks__task tasks__task--done\"" : "\"tasks__task\""}
-                >
-                
-                <button class="tasks__button tasks__button--done js-done"> ${task.done ? "✔" : ""} </button>
-                
-                ${task.content}
-                
-                <button class="tasks__button tasks__button--remove js-remove"> 🗑 </button>
+            <li class= ${task.done ? "\"tasks__task tasks__task--done\"" : "\"tasks__task\""}>
+            
+            <button class="tasks__button tasks__button--done js-done"> ${task.done ? "✔" : ""} </button>
+            
+            <span class=${task.done ? "\"tasks__taskContent--done\"" : "\"tasks__taskContent\""}> ${task.content} </span>
+            
+            <button class="tasks__button tasks__button--remove js-remove"> 🗑 </button>
             </li>
             `;
-            
         };
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
-            bindEvents();
-        };
-
-
-            
+        bindEvents();
+    };
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -80,8 +72,6 @@
         newTaskElement.focus();
     }
 
-
-
     const init = () => {
 
         render();
@@ -92,4 +82,9 @@
     };
 
     init();
-}       
+
+}
+
+
+
+

@@ -13,14 +13,14 @@
     border-bottom: 1px solid #ddd;
 }
 
-.tasks__task--done {
+.tasks__taskContent--done {
     text-decoration: line-through;
 }
 
 .tasks__button {
     border: none;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     padding: 0;
     cursor: pointer;
     color: white;
